@@ -2,8 +2,9 @@ import { NestFactory } from '@nestjs/core';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
+  const PORT = 4000;
   const app = await NestFactory.create(AppModule);
-  await app.listen(4000);
-  console.log(`Servidor rodando na porta 3000`);
+  await app.listen(PORT);
+  console.log(`Servidor rodando na porta ${PORT}`);
 }
 bootstrap();
