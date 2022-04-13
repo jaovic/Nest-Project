@@ -1,13 +1,21 @@
-import { Controller, Get, Post } from '@nestjs/common';
+import { Controller, Delete, Get, Post, Put, Body } from '@nestjs/common';
 
 @Controller('tasks')
 export class TasksController {
-  @Get()
+  @Get('/get')
   getTasks(): string {
-    return `Retornando Tasks`;
+    return JSON.stringify({ msg: 'Return Tasks' });
   }
-  @Post()
-  PostTasks(): string {
-    return JSON.stringify({ Post: 'posts' });
+  @Post('/post')
+  createTask(@Body() task): string {
+    return `${task.name} Victor`;
+  }
+  @Put('/put')
+  updateTask(): string {
+    return JSON.stringify({ Post: 'Update Task' });
+  }
+  @Delete('/delete')
+  deleteTaks(): string {
+    return JSON.stringify({ Post: 'Delete Task' });
   }
 }
