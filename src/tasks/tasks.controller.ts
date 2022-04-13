@@ -8,8 +8,8 @@ export class TasksController {
     return JSON.stringify({ msg: 'Return Tasks' });
   }
   @Post('/post')
-  createTask(@Body() task): string {
-    return `${task.name} Victor`;
+  createTask(@Body() task: createTaskDto) {
+    return { name: `${task.name} Victor` };
   }
   @Put('/put')
   updateTask(): string {
