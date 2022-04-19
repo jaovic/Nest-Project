@@ -27,7 +27,7 @@ export class TasksService {
   getTasks(): Task[] {
     return this.tasks;
   }
-  getTask(id): Task {
+  getTask(id: number): Task {
     return this.tasks.find((task) => task.id == id);
   }
 }
